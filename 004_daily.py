@@ -59,7 +59,7 @@ a=[int(s) for s in input().split()]
 b=[]
 k=0
 for i in range(n):
-    if ((a[i]%512)//64)%2==1 and a[i]%2==0:
+    if ((a[i]%8**3)//8**2)%2==1 and a[i]%2==0:
         b.append(a[i])
         k+=1
 print(k)
