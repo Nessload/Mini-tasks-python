@@ -25,7 +25,7 @@ n,k=map(int,input().split())
 begpos=sorted(list(map(int,input().split())),key=abs)
 endpos=sorted(list(map(int,input().split())),key=abs)
 l,x=0,0
-for i in range(len(endpos)):
+for i in range(n-1):
     if abs(begpos[i])!=abs(endpos[i]):
         x=begpos.pop(i)
     if begpos[i]!=endpos[i]:
