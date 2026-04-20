@@ -13,11 +13,11 @@ for i in range(n):
 mn,mx=min(l),max(r)
 coord.sort()
 end=coord[0][1]
-i,bald=1,0
+i,gap=1,0
 while end<mx:
     if coord[i][1]>end:
         if coord[i][0]>end:
-            bald+=coord[i][0]-end
+            gap+=coord[i][0]-end
         end=coord[i][1]
     i+=1
-print(mx-mn-bald)
+print(mx-mn-gap)
