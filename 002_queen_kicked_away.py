@@ -8,18 +8,35 @@
 n,m=map(int,input().split())
 if n>m:
     n,m=m,n
-x=['+']*250
+t=250
+x=['+']*t
 k=1
 rez=0
-for i in range (1,250):
+for i in range (1,t):
     if x[i]=='+':
         if n==i+1 and m==i+k+1:
             print(2)
             rez+=1
             break
-        if i+k>249:
+        if i+k>=t:
             break
         x[i],x[i+k]='-','-'
         k+=1
 if rez==0:
     print(1)
+
+""" Кастрированная версия для рейтинга: """
+
+n,m=sorted(map(int,input().split()))
+p=print
+x=[1]*500
+k=1
+r=1
+for i in range (1,250):
+    if x[i]==1:
+        if n==i+1==m-k:
+            r=2
+        x[i]=0
+        x[i+k]=0
+        k+=1
+p(r)
